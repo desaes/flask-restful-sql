@@ -102,7 +102,7 @@ class Item(Resource):
         cursor = connection.cursor()
 
         query = "UPDATE items SET price=? WHERE name=?"
-        cursor.execute(query, (price, name))
+        cursor.execute(query, (item['price'], item['name']))
 
         connection.commit()
         connection.close()               
